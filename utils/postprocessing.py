@@ -61,7 +61,7 @@ if __name__ == '__main__':
                 img = Image.open(view + 'cropped_breast.png').convert('RGB')
                 width, height = img.size
                 x_center, y_center = yolo_to_center_coordinates(x_center, y_center, width, height)
-                cropped = crop_centered_box(img, x_center, y_center, 512, 512)
+                cropped = crop_centered_box(img, x_center, y_center, 768, 768)
                 os.makedirs(save_root + id + '/tumor/', exist_ok=True)
                 os.makedirs(save_root + id + '/original/', exist_ok=True)
                 cropped.save(save_root + id + '/tumor/' + view_name + '.png')
